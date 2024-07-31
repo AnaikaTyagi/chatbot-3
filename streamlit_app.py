@@ -1,7 +1,7 @@
 import streamlit as st
 import anthropic
 
-anthropic_api_key = st.secrets["anthropic_key"]
+anthropic_api_key = st.secrets["token"]
 
 # Show title and description.
 st.title("Learn More About Your Source")
