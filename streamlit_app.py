@@ -8,7 +8,7 @@ st.title("Learn More About Your Source")
 st.write(
     "Upload a document below! We will extract key points and provide a summary. You can also ask a question about the source for clarification or additional information."
 )
-uploaded_file = st.file_uploader("Upload a source", type=("txt","md"))
+uploaded_file = st.file_uploader("Upload a source", type=("txt","md", "pdf", "xlsx"))
 extracted_data = "extract key data points from this source"
 summary = "give me a brief summary of this source"
 question = st.text_input(
