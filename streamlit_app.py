@@ -13,7 +13,7 @@ extracted_data = "extract key data points from this source"
 summary = "give me a brief summary of this source"
 question = st.text_input(
     "Ask something about the source",
-    disables=not uploaded_file,
+    disabled=not uploaded_file,
 )
 
 if uploaded_file:
