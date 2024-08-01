@@ -13,7 +13,8 @@ st.write(
         • csv        • jpeg
         • txt        • png
         • html       • gif
-        • odt        • webp"
+        • odt        • webp
+    "
         
 )
 uploaded_file = st.file_uploader("Upload a source", type=("txt","pdf", "docx", "csv", "html", "odt", "rtf", "epub", "jpeg", "png", "gif", "webp"))
