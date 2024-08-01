@@ -7,8 +7,16 @@ anthropic_api_key = st.secrets["token"]
 st.title("Learn More About Your Source")
 st.write(
     "Upload a document below! We will extract key points and provide a summary. You can also ask a question about the source for clarification or additional information."
+    "Allowed file types are as follows:
+        • pdf        • rtf
+        • docx       • epub
+        • csv        • jpeg
+        • txt        • png
+        • html       • gif
+        • odt        • webp"
+        
 )
-uploaded_file = st.file_uploader("Upload a source", type=("txt","md", "pdf", "xlsx"))
+uploaded_file = st.file_uploader("Upload a source", type=("txt","pdf", "docx", "csv", "html", "odt", "rtf", "epub", "jpeg", "png", "gif", "webp"))
 extracted_data = "extract key data points from this source"
 summary = "give me a brief summary of this source"
 question = st.text_input(
@@ -17,7 +25,7 @@ question = st.text_input(
 )
 
 if uploaded_file:
-    article = uploaded_file.read().decode()
+    
     prompt = f"""{anthropic.HUMAN_PROMPT} Here's an article:\n\n<article>
     {article}\n\n</article>\n\n{extracted_data}{anthropic.AI_PROMPT}"""
 
